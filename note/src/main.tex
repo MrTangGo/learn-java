@@ -1,12 +1,26 @@
 %! Tex program= xelatex
-\documentclass{article}
-\usepackage{CJK}
+\documentclass[12pt,UTF8,a4paper]{ctexart}
+%\usepackage{wasysym}
+% 导入页面设置
+\input{config/page_settings.tex}
+% 导入需要的包
+\input{config/package.tex}
+% 导入编写代码需要用到的包
+\input{config/code.tex}
+
+
+
+\title{学习Java}
+\author{汤哥哥}
+\date{\today}
+
 \begin{document}
-\begin{CJK}{GBK}{song}
-    LaTeX !!!
-    aaa
+%    \maketitle
+%    \newpage
+    % Test
+    \input{doc/test.tex}
 
-
-
-\end{CJK}
+    \newpage
+    \input{doc/exception/main.tex}
+%    \include{doc/exception/main}
 \end{document}
