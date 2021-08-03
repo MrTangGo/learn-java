@@ -1,29 +1,73 @@
 \usepackage{listings}
 
+\definecolor{keywordcolor}{rgb}{0.8,0.47,0.19}
+\definecolor{stringcolor}{rgb}{0.41,0.53,0.35}
+\definecolor{commentcolor}{rgb}{0.6,0.6,0.6}
+
+
+% \lstset{
+%     basicstyle          =   \sffamily,          % 基本代码风格
+%     keywordstyle        =   \bfseries,          % 关键字风格
+%     commentstyle        =   \rmfamily\itshape,  % 注释的风格，斜体
+%     stringstyle         =   \ttfamily,          % 字符串风格
+%     flexiblecolumns,                % 别问为什么，加上这个
+%     numbers             =   left,   % 行号的位置在左边
+%     showspaces          =   false,  % 是否显示空格，显示了有点乱，所以不现实了
+%     numberstyle         =   \zihao{-5}\ttfamily,    % 行号的样式，小五号，tt等宽字体
+%     showstringspaces    =   false,  
+%     captionpos          =   t,      % 这段代码的名字所呈现的位置，t指的是top上面
+%     frame               =   tb,     % 显示边框
+% }
+
+% \lstdefinestyle{Java}{
+%     language        =   Java, % 语言选Python
+%     basicstyle      =   \zihao{-5}\ttfamily,
+%     numberstyle     =   \zihao{-5}\ttfamily,
+%     keywordstyle    =   \color{blue},
+%     keywordstyle    =   [2] \color{teal},
+%     stringstyle     =   \color{magenta},
+%     commentstyle    =   \color{red}\ttfamily,
+%     breaklines      =   true,   % 自动换行，建议不要写太长的行
+%     columns         =   fixed,  % 如果不加这一句，字间距就不固定，很丑，必须加
+%     basewidth       =   0.5em,
+% }
+
+% \lstset{
+%     breaklines,                                 % 自动将长的代码行换行排版
+%     extendedchars=false,                        % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+%     backgroundcolor=\color[rgb]{0.96,0.96,0.96},% 背景颜色
+%     keywordstyle=\color{blue}\bfseries,         % 关键字颜色
+%     identifierstyle=\color{black},              % 普通标识符颜色
+%     commentstyle=\color[rgb]{0,0.6,0},          % 注释颜色
+%     stringstyle=\color[rgb]{0.58,0,0.82},       % 字符串颜色
+%     showstringspaces=false,                     % 不显示字符串内的空格
+%     numbers=left,                               % 显示行号
+%     numberstyle=\tiny\menlo,                    % 设置数字字体
+%     basicstyle=\small\menlo,                    % 设置基本字体
+%     captionpos=t,                               % title在上方(在bottom即为b)
+%     frame=single,                               % 设置代码框形式
+%     rulecolor=\color[rgb]{0.8,0.8,0.8},         % 设置代码框颜色
+% } 
+
+% 全局设置
 \lstset{
-    basicstyle          =   \sffamily,          % 基本代码风格
-    keywordstyle        =   \bfseries,          % 关键字风格
-    commentstyle        =   \rmfamily\itshape,  % 注释的风格，斜体
-    stringstyle         =   \ttfamily,  % 字符串风格
-    flexiblecolumns,                % 别问为什么，加上这个
-    numbers             =   left,   % 行号的位置在左边
-    showspaces          =   false,  % 是否显示空格，显示了有点乱，所以不现实了
-    numberstyle         =   \zihao{-5}\ttfamily,    % 行号的样式，小五号，tt等宽字体
-    showstringspaces    =   false,
-    captionpos          =   t,      % 这段代码的名字所呈现的位置，t指的是top上面
-    frame               =   lrtb,   % 显示边框
+    breaklines = true, % 自动将长的代码行换行排版
+    extendedchars = false,  % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+    basicstyle = \fontspec{Menlo}, % 设置字体
+    frame = single, % 设置代码框形式
+    frame = tb,     % 显示边框
+    rulecolor=\color[rgb]{0.8,0.8,0.8},  % 设置代码框颜色
+    backgroundcolor=\color[rgb]{0.96,0.96,0.96}, % 背景颜色
+    % keywordstyle=\color{blue}\bfseries, % 关键字颜色
+    columns = fixed,  % 如果不加这一句，字间距就不固定，很丑，必须加
+    % basewidth = 0.5em,
 }
 
+% 个别设置
 \lstdefinestyle{Java}{
-    language        =   Python, % 语言选Python
-    basicstyle      =   \zihao{-5}\ttfamily,
-    numberstyle     =   \zihao{-5}\ttfamily,
-    keywordstyle    =   \color{blue},
-    keywordstyle    =   [2] \color{teal},
-    stringstyle     =   \color{magenta},
-    commentstyle    =   \color{red}\ttfamily,
-    breaklines      =   true,   % 自动换行，建议不要写太长的行
-    columns         =   fixed,  % 如果不加这一句，字间距就不固定，很丑，必须加
-    basewidth       =   0.5em,
+    language = Java,  % 语言选Python
+    % keywordstyle    =   \color{keyword},
+    keywordstyle = \color{keywordcolor}, 
+    stringstyle  = \color{stringcolor},
+    commentstyle = \color{commentcolor},
 }
-

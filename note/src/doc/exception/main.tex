@@ -1,3 +1,18 @@
-\section*{异常}\label{sec:Exception}
+\section*{异常}
+
+
+\subsection*{throws方式处理异常}
+在方法声明的末端throws出去，把异常抛给方法的调用者。
+\begin{lstlisting}[style=Java]
+public void 方法() throws 异常类名 {
+
+}
+\end{lstlisting}
+
+\lstinputlisting[
+    style=Java
+]{../../../exception/src/com/learnjava/exception/ThrowsDemo1.java}
+
+注意：这个throws格式是跟在方法的括号后面的。编译时异常必须要进行处理，两种处理方案：try...catch …或者 throws，如果采用 throws 这种方案，在方法上进行显示声明,将来谁调用这个方法谁处理。运行时异常因为在运行时才会发生,所以在方法后面可以不写,运行时出现异常默认交给jvm处理
 
 
