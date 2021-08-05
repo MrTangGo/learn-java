@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/collection/collection.iml" filepath="$PROJECT_DIR$/collection/collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonly-api/commonly-api.iml" filepath="$PROJECT_DIR$/commonly-api/commonly-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/exception/exception.iml" filepath="$PROJECT_DIR$/exception/exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/generic/generic.iml" filepath="$PROJECT_DIR$/generic/generic.iml" />
       <module fileurl="file://$PROJECT_DIR$/oop-pro/lambda/lambda.iml" filepath="$PROJECT_DIR$/oop-pro/lambda/lambda.iml" />
       <module fileurl="file://$PROJECT_DIR$/commonly-api/math/math.iml" filepath="$PROJECT_DIR$/commonly-api/math/math.iml" />
       <module fileurl="file://$PROJECT_DIR$/note/note.iml" filepath="$PROJECT_DIR$/note/note.iml" />
