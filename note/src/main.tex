@@ -1,5 +1,7 @@
 %! Tex program= xelatex
 \documentclass[12pt,UTF8,a4paper]{ctexart}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 %\usepackage{wasysym}
 % 导入页面设置
 \input{config/page_settings.tex}
@@ -17,13 +19,17 @@
 \begin{document}
 %    \maketitle
 %    \newpage
-    % Test
-    \input{doc/test.tex}
 
+    % Test
+    % \input{doc/test.tex}
+
+    % \newpage
+    % \input{doc/exception/main.tex}
     \newpage
-    \input{doc/exception/main.tex}
-    \newpage
-    \input{doc/collection/main.tex}
+%    集合
+%    \input{doc/collection/main.tex}
+%    泛型
+    \input{doc/generic/main.tex}
 
     
 \end{document}

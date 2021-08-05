@@ -1,0 +1,110 @@
+\section*{泛型}
+
+\subsection*{问题的出现}
+
+在没有出现泛型之前，如果定义一个ArryList是这样定义的。因为ArrayList中的元素是后添加，不明白添加何元素的情况下，添加元素的类型统一按照Object类添加处理。
+\begin{lstlisting}[style=Java]
+ArrayList arrayList = new ArrayList();
+arrayList.add("aaa");
+arrayList.add("bbb");
+arrayList.add("ccc");
+\end{lstlisting}
+
+用迭代器来遍历这个ArryList的时候，用Object数据类型的变量来接收也是正常的。
+\begin{lstlisting}[style=Java]
+Iterator iterator = arrayList.iterator();
+while (iterator.hasNext()){
+    Object next = iterator.next();
+    System.out.println(next);
+}
+\end{lstlisting}
+
+但是会存在一个问题。如果使用.length()方法的话，编译会不通过。这是因为Object类没有.length()这个方法。
+\begin{lstlisting}[style=Java]
+next.length();
+\end{lstlisting}
+
+可是传入的元素是有字符串的，如果是一定要用.length的方法，可以使用强制转化的方法把Object类转化为String类。
+\begin{lstlisting}[style=Java]
+String next = (String) iterator.next();
+\end{lstlisting}
+
+这样在使用.length()的方法就不会报错了。
+
+但是这样做也不是完美的。如果ArrayList里面添加的不仅仅只有String类型一种数据呢？如果是添加了一个Interager数据类型呢？
+那还是会报错的。
+\lstinputlisting[
+    style=Java,
+    linerange={5-19}
+]{../../../generic/src/com/learnjava/generic/GenericDemo2.java}
+
+\begin{lstlisting}[style = Java]
+java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
+\end{lstlisting}
+
+ArrayList可以存放任意类型的数据。例子中ArryList添加了String类型，也添加了一个Integer类型。在使用强制转化的时候（认为next都是String类型的数据，都对他进行了强身转化）程序报错了(Integer类型的数据不能强制的转化为String类型的数据)。而且这样的报错在编译的过程中还发现不了。
+
+% 要解决上面的问题可以使用两个思路：1、可以在一开始的时候就确定好ArrayList里面的数据类型。2、也可以让ArrayList中的类型数据随着我们传入的数据类型的变化而变化。
+
+在这个问题的背景下泛型应运而生。
+
+
+\subsection*{概述}
+可以使用泛型的地方有：
+
+1、类的后面，称之为泛型类 
+
+2、方法申明上，称之为泛型方法 
+
+3、接口的后面，称之为泛型接口。
+
+需要注意的规则：
+
+规则1：
+<A/B/C/D/E>:里面的字符可以按照变量的全名规则来，一般只写一个大写的英文字母，表示这是一个泛型类。
+
+规则2：
+<A,B,C...>:指定多种类型的格式，多种类型之前用逗号隔开。
+
+\subsection*{泛型类}
+
+类定义的过程中，类名的后面是<E>，表示这是一个泛型类。实列化泛型类的时候，必须要给这个泛型类确定具体的数据类型。
+
+可以看看一下最常用到泛型的地方之一ArrayList的类源代码：
+
+\begin{lstlisting}[style = Java]
+public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable{
+    ...
+    public E get(int index) {...}
+    public E set(int index, E element) {...}
+    private void add(E e, Object[] elementData, int s) {...}
+}
+\end{lstlisting}
+
+类名ArrayList<E>，<E>表示接收的是泛型。在get、set方法中，返回值也是<E>类型的数据。也就是说，在实例化类的时候，返回值<E>的类型就确认好了。
+
+\begin{lstlisting}[style = Java]
+    add(E e, Object[] elementData, int s) {...}
+\end{lstlisting}
+
+同时在编译的过程中，add方法的参数<E>表明了，add方法接收的参数类型为<E>类型的数据。这样就可以在编译的过程中发现错误了。
+
+
+可以尝试着自己写一个泛型类。
+
+\lstinputlisting[
+    style=Java,
+    linerange={3-13}
+]{../../../generic/src/com/learnjava/generic/GenericDemo4.java}
+
+\lstinputlisting[
+    style=Java,
+    linerange={3-13}
+]{../../../generic/src/com/learnjava/generic/Box.java}
+
+
+
+
+
+
+\subsection*{泛型方法}

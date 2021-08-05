@@ -1,7 +1,6 @@
 \section*{集合}\label{sec:Collection}
 
 
-
 \subsection*{集合的特点}
 数组可以存储基本数据类型和引用数据类型。集合只能存储引用数据类型，存储基本数据类型会报错。但是可以把基本数据类型改为包装类数据来放入集合。
 \lstinputlisting[style=Java]{../../../Collection/src/com/learnjava/collection/CollectionDemo1.java}
@@ -29,10 +28,10 @@ collection是一个接口，new的时候要new实现对象。这是多态的表�
 Collection<String> collection = new ArrayList<>();
 \end{lstlisting}
 
-\subsubsection*{add,remove}
+\subsubsection*{add/remove/clear/isEmpty/contains/size}
 \lstinputlisting[
     style=Java,
-    linerange={5-22}
+    linerange={5-36}
 ]{../../../Collection/src/com/learnjava/collection/CollectionDemo2.java}
 
 \subsubsection*{removeif}
@@ -66,6 +65,11 @@ removeIf需要传入的是一个符合Predicate接口的对象作为参数。Pre
         boolean test(T t);
         ...
 \end{lstlisting}
+
+% 迭代器
+\subsection*{集合迭代器}
+\input{doc/collection/iterator.tex}
+
 
 
 
